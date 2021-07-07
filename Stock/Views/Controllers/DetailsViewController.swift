@@ -174,10 +174,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         addSubviews()
-      
-      
-      
+     
     }
+ 
+ 
   private func addSubviews() {
     view.addSubview(productNameText)
     view.addSubview(purchaseNumberText)
@@ -199,7 +199,7 @@ class DetailsViewController: UIViewController {
     
     productNameText.frame = CGRect(
       x: 20,
-      y: view.safeAreaInsets.bottom + 20,
+      y: view.safeAreaInsets.bottom + 70,
       width: view.width - 40,
       height: 52.0)
     

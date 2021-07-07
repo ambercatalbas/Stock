@@ -75,7 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KFF-S2-2Wn"/>
                     <connections>
-                        <segue destination="CVj-Al-kz1" kind="presentation" identifier="toDetailsVC" modalPresentationStyle="fullScreen" id="614-sO-R4U"/>
+                        <segue destination="xET-3N-Ayf" kind="presentation" identifier="toDetailsVC" modalPresentationStyle="fullScreen" id="614-sO-R4U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPW-be-UDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,10 +164,29 @@
                         <viewLayoutGuide key="safeArea" id="FpR-mp-dzr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9oc-dM-nI6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCj-TC-DpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1236" y="1789"/>
+            <point key="canvasLocation" x="-1236" y="2636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9tG-LO-xb0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xET-3N-Ayf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k8f-TZ-zAp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CVj-Al-kz1" kind="relationship" relationship="rootViewController" id="lUH-sP-9dI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQP-qR-RpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1236.231884057971" y="1788.6160714285713"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
