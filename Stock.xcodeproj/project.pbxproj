@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,11 +20,11 @@
 		64586ED926949BCA00CE03CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586ED826949BCA00CE03CF /* Extensions.swift */; };
 		64586EDB26949BFF00CE03CF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EDA26949BFF00CE03CF /* LogInViewController.swift */; };
 		64586EDD26949C1B00CE03CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EDC26949C1B00CE03CF /* SettingsViewController.swift */; };
-		64586EE726949FB100CE03CF /* DetailsViewController 16.53.10 16.53.10 16.53.10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EE626949FB100CE03CF /* DetailsViewController 16.53.10 16.53.10 16.53.10.swift */; };
+		64586EE726949FB100CE03CF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EE626949FB100CE03CF /* DetailsViewController.swift */; };
 		64586EE926949FC000CE03CF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EE826949FC000CE03CF /* DetailViewModel.swift */; };
 		64586EEB26949FDF00CE03CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64586EEA26949FDF00CE03CF /* Main.storyboard */; };
 		64586EED2694A0AE00CE03CF /* UploadViewController 16.53.22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EEC2694A0AE00CE03CF /* UploadViewController 16.53.22.swift */; };
-		64586EEF2694A0EE00CE03CF /* HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EEE2694A0EE00CE03CF /* HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift */; };
+		64586EEF2694A0EE00CE03CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EEE2694A0EE00CE03CF /* HomeViewController.swift */; };
 		64586EF12694A13800CE03CF /* FeedTableViewCell 16.53.12 16.53.12 16.53.12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EF02694A13800CE03CF /* FeedTableViewCell 16.53.12 16.53.12 16.53.12.swift */; };
 		64586EF32694AA1000CE03CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64586EF22694AA1000CE03CF /* GoogleService-Info.plist */; };
 		E06457DE330A10B238C93C8E /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF21C2A367F7D6BD93EEC052 /* Pods_Stock.framework */; };
@@ -68,11 +68,11 @@
 		64586ED826949BCA00CE03CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		64586EDA26949BFF00CE03CF /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		64586EDC26949C1B00CE03CF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		64586EE626949FB100CE03CF /* DetailsViewController 16.53.10 16.53.10 16.53.10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DetailsViewController 16.53.10 16.53.10 16.53.10.swift"; sourceTree = "<group>"; };
+		64586EE626949FB100CE03CF /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		64586EE826949FC000CE03CF /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		64586EEA26949FDF00CE03CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		64586EEC2694A0AE00CE03CF /* UploadViewController 16.53.22.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UploadViewController 16.53.22.swift"; sourceTree = "<group>"; };
-		64586EEE2694A0EE00CE03CF /* HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift"; sourceTree = "<group>"; };
+		64586EEE2694A0EE00CE03CF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		64586EF02694A13800CE03CF /* FeedTableViewCell 16.53.12 16.53.12 16.53.12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedTableViewCell 16.53.12 16.53.12 16.53.12.swift"; sourceTree = "<group>"; };
 		64586EF22694AA1000CE03CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79C8CB2BFDB01EC6832810DA /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 			children = (
 				64586EDC26949C1B00CE03CF /* SettingsViewController.swift */,
 				64586EDA26949BFF00CE03CF /* LogInViewController.swift */,
-				64586EE626949FB100CE03CF /* DetailsViewController 16.53.10 16.53.10 16.53.10.swift */,
+				64586EE626949FB100CE03CF /* DetailsViewController.swift */,
 				64586EEC2694A0AE00CE03CF /* UploadViewController 16.53.22.swift */,
-				64586EEE2694A0EE00CE03CF /* HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift */,
+				64586EEE2694A0EE00CE03CF /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,7 +251,6 @@
 				C277CD657344D37A231BE1BD /* Pods-StockTests.debug.xcconfig */,
 				7EA17C0D6D04E909E2E7C950 /* Pods-StockTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -500,8 +499,8 @@
 				64586EDD26949C1B00CE03CF /* SettingsViewController.swift in Sources */,
 				64586EF12694A13800CE03CF /* FeedTableViewCell 16.53.12 16.53.12 16.53.12.swift in Sources */,
 				64586ED126949ACF00CE03CF /* AppDelegate.swift in Sources */,
-				64586EE726949FB100CE03CF /* DetailsViewController 16.53.10 16.53.10 16.53.10.swift in Sources */,
-				64586EEF2694A0EE00CE03CF /* HomeViewController 16.53.12 16.53.12 16.53.12 16.53.12.swift in Sources */,
+				64586EE726949FB100CE03CF /* DetailsViewController.swift in Sources */,
+				64586EEF2694A0EE00CE03CF /* HomeViewController.swift in Sources */,
 				64586EE926949FC000CE03CF /* DetailViewModel.swift in Sources */,
 				64586ED726949B7600CE03CF /* Products.swift in Sources */,
 				64586EED2694A0AE00CE03CF /* UploadViewController 16.53.22.swift in Sources */,

@@ -175,13 +175,7 @@ class DetailsViewController: UIViewController {
 
         addSubviews()
       
-      productNameText.text = productName
-      purchaseNumberText.text = purchaseNumber
-      initialStockQuantityText.text = initialStockQuantity
-      purchasePriceText.text = purchasePrice
-      salePriceText.text = salePrice
-      dateText.text = date
-      totalStockText.text = totalStock
+      
       
     }
   private func addSubviews() {
@@ -248,6 +242,17 @@ class DetailsViewController: UIViewController {
       height: 52.0)
     
     
+  }
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(true)
+    
+    productNameText.text = productName
+    purchaseNumberText.text = purchaseNumber
+    initialStockQuantityText.text = initialStockQuantity
+    purchasePriceText.text = purchasePrice
+    salePriceText.text = salePrice
+    dateText.text = date
+    totalStockText.text = totalStock
   }
   
   

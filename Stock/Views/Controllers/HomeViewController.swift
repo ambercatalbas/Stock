@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
       tableView.delegate = self
       tableView.dataSource = self
       view.addSubview(tableView)
+      getData()
      
     }
   override func viewDidLayoutSubviews() {
@@ -53,7 +54,7 @@ class HomeViewController: UIViewController {
     
   }
 
-  func getData(index: Int)  {
+  func getData () {
     let docRef = Firestore.firestore().collection("Product").order(by: "date").addSnapshotListener { [self] (snapshot, error) in
       if error != nil {
         print("error")
@@ -74,13 +75,11 @@ class HomeViewController: UIViewController {
               date: product.get("date") as! String,
               totalStock: product.get("totalStock") as! String)
             self.products.append(product)
-            
+            print(products)
             self.productsListViewModel = ProductsListViewModel(productList: products)
+//
+//            let productsListViewModell = self.productsListViewModel.productAtIndex(index)
             
-            DispatchQueue.main.async {
-              let productsListViewModell = self.productsListViewModel.productAtIndex(index)
-            
-            }
             
           }
           self.tableView.reloadData()
@@ -89,48 +88,61 @@ class HomeViewController: UIViewController {
     }
     
   }
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print(products.count)
+      return products.count
+    
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
+          return UITableViewCell()
+    
+      }
+    cell.configure(nameText: products[indexPath.row].productName, priceText: products[indexPath.row].initialStockQuantity )
+    
+    
+      return cell
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "toDetailsVC" {
+          let destinationVC = segue.destination as? DetailsViewController
+        destinationVC?.productName = selectedproductName
+        destinationVC?.initialStockQuantity = selectedinitialStockQuantity
+        destinationVC?.purchaseNumber = selectedpurchaseNumber
+        destinationVC?.purchasePrice = selectedpurchasePrice
+        destinationVC?.salePrice = selectedsalePrice
+        destinationVC?.totalStock = selectedtotalStock
+        destinationVC?.date = selecteddate
+        
+      }
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.reloadData()
+    selectedproductName = productsListViewModel.productList[indexPath.row].productName
+    selectedinitialStockQuantity = productsListViewModel.productList[indexPath.row].initialStockQuantity
+    selectedpurchaseNumber = productsListViewModel.productList[indexPath.row].purchaseNumber
+    selectedpurchasePrice = productsListViewModel.productList[indexPath.row].purchasePrice
+    selectedsalePrice = productsListViewModel.productList[indexPath.row].salePrice
+    selectedtotalStock = productsListViewModel.productList[indexPath.row].totalStock
+    selecteddate = productsListViewModel.productList[indexPath.row].date
+    
+
+      performSegue(withIdentifier: "toDetailsVC", sender: nil)
+
+  }
+
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return 100
+  }
+
 
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
-            return UITableViewCell()
-      
-        }
-      cell.configure(nameText: products[indexPath.row].productName, priceText: products[indexPath.row].initialStockQuantity )
-      
-      
-        return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailsVC" {
-            let destinationVC = segue.destination as? DetailsViewController
-          
-          destinationVC?.productName =
-          
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
-      tableView.reloadData()
-    
-      
-      
-
-        performSegue(withIdentifier: "toDetailsVC", sender: nil)
-
-    }
-
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
 
 }
