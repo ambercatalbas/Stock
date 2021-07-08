@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
   var selectedsalePrice = ""
   var selecteddate = ""
   var selectedtotalStock = ""
+  var selectedproductID = ""
   
   var selectedproductNameArray = [String]()
   var selectedpurchaseNumberArray = [String]()
@@ -115,8 +116,6 @@ class HomeViewController: UIViewController {
     
       }
     cell.configure(nameText: products[indexPath.row].productName , priceText: products[indexPath.row].salePrice, totalStockText: products[indexPath.row].totalStock )
- 
-    
       return cell
   }
   
@@ -130,6 +129,7 @@ class HomeViewController: UIViewController {
         destinationVC?.salePrice = selectedsalePrice
         destinationVC?.totalStock = selectedtotalStock
         destinationVC?.date = selecteddate
+        destinationVC?.productID = selectedproductID
         
       }
   }
@@ -144,7 +144,7 @@ class HomeViewController: UIViewController {
     selectedsalePrice = productsListViewModel.productList[indexPath.row].salePrice
     selectedtotalStock = productsListViewModel.productList[indexPath.row].totalStock
     selecteddate = productsListViewModel.productList[indexPath.row].date
-    
+    selectedproductID = productIDArray[indexPath.row]
 
       performSegue(withIdentifier: "toDetailsVC", sender: nil)
 

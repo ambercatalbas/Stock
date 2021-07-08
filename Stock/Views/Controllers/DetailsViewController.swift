@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class DetailsViewController: UIViewController {
 
@@ -47,7 +49,7 @@ class DetailsViewController: UIViewController {
     field.backgroundColor = .secondarySystemBackground
     field.layer.borderWidth = 1.0
     field.layer.borderColor  = UIColor.secondaryLabel.cgColor
-    field.keyboardType = .numberPad
+    field.keyboardType = .decimalPad
     return field
   } ()
   
@@ -65,7 +67,7 @@ class DetailsViewController: UIViewController {
     field.backgroundColor = .secondarySystemBackground
     field.layer.borderWidth = 1.0
     field.layer.borderColor  = UIColor.secondaryLabel.cgColor
-    
+    field.keyboardType = .decimalPad
     return field
   } ()
   
@@ -83,7 +85,7 @@ class DetailsViewController: UIViewController {
     field.backgroundColor = .secondarySystemBackground
     field.layer.borderWidth = 1.0
     field.layer.borderColor  = UIColor.secondaryLabel.cgColor
-    
+    field.keyboardType = .decimalPad
     return field
   } ()
   private let initialStockQuantityText: UITextField = {
@@ -100,7 +102,7 @@ class DetailsViewController: UIViewController {
     field.backgroundColor = .secondarySystemBackground
     field.layer.borderWidth = 1.0
     field.layer.borderColor  = UIColor.secondaryLabel.cgColor
-    
+    field.keyboardType = .decimalPad
     return field
   } ()
   private let dateText: UITextField = {
@@ -139,20 +141,9 @@ class DetailsViewController: UIViewController {
   } ()
   
   
-  private let saveButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("SAVE", for: .normal)
-    button.layer.masksToBounds = true
-    button.layer.cornerRadius = Constants.cornerRadius
-    button.backgroundColor = .systemBlue
-    button.setTitleColor(.white, for: .normal)
-    
-    return button
-  } ()
-  
   private let updateButton: UIButton = {
     let button = UIButton()
-    button.setTitle("UPDATE DATA", for: .normal)
+    button.setTitle("GÜNCELLE", for: .normal)
     button.layer.masksToBounds = true
     button.layer.cornerRadius = Constants.cornerRadius
     button.backgroundColor = .systemGreen
@@ -161,6 +152,44 @@ class DetailsViewController: UIViewController {
     return button
   } ()
   
+  
+  private let productNameTextLabel: UILabel = {
+    
+    let label = UILabel()
+    label.text = "Ürün Adı:"
+    label.textAlignment = .left
+    return label
+  } ()
+  private let initialStockQuantityTextLabel: UILabel = {
+    
+    let label = UILabel()
+    label.text = "Stok Adedi:"
+    label.textAlignment = .left
+    return label
+  } ()
+  private let purchaseNumberTextLabel: UILabel = {
+    
+    let label = UILabel()
+    label.text = "Alınan Miktar:"
+    label.textAlignment = .left
+    return label
+  } ()
+  private let purchasePriceTextLabel: UILabel = {
+    
+    let label = UILabel()
+    label.text = "Alış Fiyatı:"
+    label.textAlignment = .left
+    return label
+  } ()
+  private let salePriceTextLabel: UILabel = {
+    
+    let label = UILabel()
+    label.text = "Satış Fiyatı"
+    label.textAlignment = .left
+    return label
+  } ()
+
+  
   var productName = ""
   var purchaseNumber = ""
   var initialStockQuantity = ""
@@ -168,12 +197,14 @@ class DetailsViewController: UIViewController {
   var salePrice = ""
   var date = ""
   var totalStock = ""
+  var productID = ""
   
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addSubviews()
+      updateButton.addTarget(self, action: #selector(didTapUpdateButton), for: .touchUpInside)
      
     }
  
@@ -185,9 +216,13 @@ class DetailsViewController: UIViewController {
     view.addSubview(purchasePriceText)
     view.addSubview(salePriceText)
     view.addSubview(dateText)
-    view.addSubview(saveButton)
+    view.addSubview(updateButton)
     view.addSubview(totalStockText)
-    
+    view.addSubview(productNameTextLabel)
+    view.addSubview(purchaseNumberTextLabel)
+    view.addSubview(initialStockQuantityTextLabel)
+    view.addSubview(purchasePriceTextLabel)
+    view.addSubview(salePriceTextLabel)
     
   }
     
@@ -196,32 +231,58 @@ class DetailsViewController: UIViewController {
     super.viewDidLayoutSubviews()
     
     
+    productNameTextLabel.frame = CGRect(
+      x: 20,
+      y: view.safeAreaInsets.bottom + 20,
+      width: view.width - 40,
+      height: 20.0)
     
     productNameText.frame = CGRect(
       x: 20,
-      y: view.safeAreaInsets.bottom + 70,
+      y: productNameTextLabel.bottom,
       width: view.width - 40,
       height: 52.0)
     
-    initialStockQuantityText.frame = CGRect(
+    initialStockQuantityTextLabel.frame = CGRect(
       x: 20,
       y: productNameText.bottom + 10,
+      width: view.width/2-25,
+      height: 20)
+    
+    initialStockQuantityText.frame = CGRect(
+      x: 20,
+      y: initialStockQuantityTextLabel.bottom,
       width: view.width/2-25,
       height: 52.0)
     
-    purchaseNumberText.frame = CGRect(
+    purchaseNumberTextLabel.frame = CGRect(
       x: view.width/2+5,
       y: productNameText.bottom + 10,
       width: view.width/2-25,
+      height: 20)
+    purchaseNumberText.frame = CGRect(
+      x: view.width/2+5,
+      y: purchaseNumberTextLabel.bottom,
+      width: view.width/2-25,
       height: 52.0)
-    purchasePriceText.frame = CGRect(
+    purchasePriceTextLabel.frame = CGRect(
       x: 20,
       y: purchaseNumberText.bottom + 10,
       width: view.width/2-25,
+      height: 20)
+    purchasePriceText.frame = CGRect(
+      x: 20,
+      y: purchasePriceTextLabel.bottom,
+      width: view.width/2-25,
       height: 52.0)
-    salePriceText.frame = CGRect(
+    salePriceTextLabel.frame = CGRect(
       x: view.width/2+5,
       y: purchaseNumberText.bottom + 10,
+      width: view.width/2-25,
+      height: 20)
+    salePriceText.frame = CGRect(
+      x: view.width/2+5,
+      y: salePriceTextLabel.bottom,
       width: view.width/2-25,
       height: 52.0)
     dateText.frame = CGRect(
@@ -235,7 +296,7 @@ class DetailsViewController: UIViewController {
       width: view.width/2-25,
       height: 52.0)
     
-    saveButton.frame = CGRect(
+    updateButton.frame = CGRect(
       x: 25,
       y: dateText.bottom + 10,
       width: view.width - 50,
@@ -254,6 +315,28 @@ class DetailsViewController: UIViewController {
     dateText.text = date
     totalStockText.text = totalStock
   }
-  
+  @objc private func didTapUpdateButton() {
+      
+      //update data
+      
+      let fireStoreDatabase = Firestore.firestore()
+           
+                      let productStore = ["productName": self.productNameText.text!,
+                                       "purchaseNumber" : self.purchaseNumberText.text!,
+                                       "initialStockQuantity" : self.initialStockQuantityText.text!,
+                                       "purchasePrice" : self.purchasePriceText.text!,
+                                       "salePrice" : self.salePriceText.text!] as [String : Any]
+    let productModel = [
+      "productName": self.productNameText.text!,
+      "purchaseNumber": self.purchaseNumberText.text!,
+      "purchasePrice": self.purchasePriceText.text!,
+      "salePrice": self.salePriceText.text!,
+      "initialStockQuantity": self.initialStockQuantityText.text!] as [String: Any]
+                      
+                      fireStoreDatabase.collection("Product").document(productID).setData(productModel, merge: true)
+      self.dismiss(animated: true, completion: nil)
+      
+      
+  }
   
 }

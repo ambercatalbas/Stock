@@ -27,6 +27,7 @@
 		64586EEF2694A0EE00CE03CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EEE2694A0EE00CE03CF /* HomeViewController.swift */; };
 		64586EF12694A13800CE03CF /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64586EF02694A13800CE03CF /* FeedTableViewCell.swift */; };
 		64586EF32694AA1000CE03CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64586EF22694AA1000CE03CF /* GoogleService-Info.plist */; };
+		649A11D72697650C00B398C4 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A11D62697650C00B398C4 /* SaleViewController.swift */; };
 		E06457DE330A10B238C93C8E /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF21C2A367F7D6BD93EEC052 /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		64586EEE2694A0EE00CE03CF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		64586EF02694A13800CE03CF /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		64586EF22694AA1000CE03CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		649A11D62697650C00B398C4 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		79C8CB2BFDB01EC6832810DA /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		7EA17C0D6D04E909E2E7C950 /* Pods-StockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockTests.release.xcconfig"; path = "Target Support Files/Pods-StockTests/Pods-StockTests.release.xcconfig"; sourceTree = "<group>"; };
 		A27B4B96D11A570C779A3AA6 /* Pods-Stock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.debug.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				64586EE626949FB100CE03CF /* DetailsViewController.swift */,
 				64586EEC2694A0AE00CE03CF /* UploadViewController.swift */,
 				64586EEE2694A0EE00CE03CF /* HomeViewController.swift */,
+				649A11D62697650C00B398C4 /* SaleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				64586ED726949B7600CE03CF /* Products.swift in Sources */,
 				64586EED2694A0AE00CE03CF /* UploadViewController.swift in Sources */,
 				64586ED526949B6000CE03CF /* Service.swift in Sources */,
+				649A11D72697650C00B398C4 /* SaleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ class UploadViewController: UIViewController {
   private let productNameText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = " productNameText"
+    field.placeholder = " Ürün Adı"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -38,7 +38,7 @@ class UploadViewController: UIViewController {
   private let purchaseNumberText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "purchaseNumberText"
+    field.placeholder = "Alınan Miktar"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -56,7 +56,7 @@ class UploadViewController: UIViewController {
   private let purchasePriceText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "purchasePriceText"
+    field.placeholder = "Alış Fiyatı"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -74,7 +74,7 @@ class UploadViewController: UIViewController {
   private let salePriceText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "salePriceText"
+    field.placeholder = "Satış Fiyatı"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -91,7 +91,7 @@ class UploadViewController: UIViewController {
   private let initialStockQuantityText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "initialStockQuantityText"
+    field.placeholder = "Stok Adedi"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -108,7 +108,7 @@ class UploadViewController: UIViewController {
   private let dateText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "dateText"
+    field.placeholder = "Tarih"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -125,7 +125,7 @@ class UploadViewController: UIViewController {
   private let totalStockText: UITextField = {
     
     let field = UITextField()
-    field.placeholder = "totalStockText"
+    field.placeholder = "Toplam Stok"
     field.returnKeyType = .next
     field.leftViewMode  = .always
     field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -152,16 +152,16 @@ class UploadViewController: UIViewController {
     return button
   } ()
   
-  private let updateButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("UPDATE DATA", for: .normal)
-    button.layer.masksToBounds = true
-    button.layer.cornerRadius = Constants.cornerRadius
-    button.backgroundColor = .systemGreen
-    button.setTitleColor(.white, for: .normal)
+
+  
+  private let productNameTextLabel: UILabel = {
     
-    return button
+    let label = UILabel()
+    label.text = "Ürün Adı:"
+    label.textAlignment = .left
+    return label
   } ()
+  
   
   
   let datePicker = UIDatePicker()
@@ -206,9 +206,15 @@ class UploadViewController: UIViewController {
     
     
     
-    productNameText.frame = CGRect(
+    productNameTextLabel.frame = CGRect(
       x: 20,
       y: view.safeAreaInsets.bottom + 20,
+      width: view.width - 40,
+      height: 20.0)
+    
+    productNameText.frame = CGRect(
+      x: 20,
+      y: productNameTextLabel.bottom + 10 ,
       width: view.width - 40,
       height: 52.0)
     
@@ -307,6 +313,7 @@ class UploadViewController: UIViewController {
     view.addSubview(dateText)
     view.addSubview(saveButton)
     view.addSubview(totalStockText)
+    view.addSubview(productNameTextLabel)
     
     
     

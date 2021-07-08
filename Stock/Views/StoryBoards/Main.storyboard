@@ -11,7 +11,7 @@
         <!--Log In View Controller-->
         <scene sceneID="udo-ax-yG6">
             <objects>
-                <viewController id="GGL-tD-aUO" customClass="LogInViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="GGL-tD-aUO" customClass="LogInViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Yo-Ak-QIv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZj-gG-xHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1962.3188405797102" y="-578.57142857142856"/>
+            <point key="canvasLocation" x="2551" y="-910"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZcX-F5-TVw">
@@ -39,7 +39,8 @@
                     <connections>
                         <segue destination="QDQ-U7-J02" kind="relationship" relationship="viewControllers" id="ilq-7Q-cuh"/>
                         <segue destination="A9o-zx-tzw" kind="relationship" relationship="viewControllers" id="PEZ-BC-SkB"/>
-                        <segue destination="6SL-yp-J69" kind="relationship" relationship="viewControllers" id="Y9F-mw-e4F"/>
+                        <segue destination="hhK-nd-Hwq" kind="relationship" relationship="viewControllers" id="4jS-Sd-PaG"/>
+                        <segue destination="6SL-yp-J69" kind="relationship" relationship="viewControllers" id="Su0-Se-4Eb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDf-cT-0EE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,12 +99,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL4-Fq-hfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="268"/>
+            <point key="canvasLocation" x="1390" y="268"/>
+        </scene>
+        <!--Sale View Controller-->
+        <scene sceneID="xcc-Hl-tuo">
+            <objects>
+                <viewController storyboardIdentifier="SaleViewController" id="OJK-5t-Tcc" customClass="SaleViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tIr-8l-XCe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xtH-16-Mkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="exm-bL-zFm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvG-d3-Sqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="1070"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qry-sR-atg">
             <objects>
-                <viewController id="RAQ-8a-0Vp" customClass="SettingsViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="RAQ-8a-0Vp" customClass="SettingsViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ACu-6J-inK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BaJ-pV-XLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="1057"/>
+            <point key="canvasLocation" x="1390" y="1042"/>
         </scene>
         <!--Add Product-->
         <scene sceneID="FVz-DW-ULX">
@@ -134,12 +151,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXY-kQ-KKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="268"/>
+            <point key="canvasLocation" x="-309" y="268"/>
         </scene>
         <!--Upload-->
         <scene sceneID="x8b-3i-J6D">
             <objects>
-                <viewController id="6IO-e7-q7I" customClass="UploadViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadViewController" id="6IO-e7-q7I" customClass="UploadViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LR0-Cg-OYd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4r-xq-Ai5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725" y="1008"/>
+            <point key="canvasLocation" x="-310" y="1037"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="b9f-wo-spE">
@@ -171,15 +188,35 @@
             </objects>
             <point key="canvasLocation" x="-1236" y="1722"/>
         </scene>
+        <!--SATIŞ-->
+        <scene sceneID="XMF-e1-hiu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hhK-nd-Hwq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SATIŞ" image="square.and.arrow.up" catalog="system" id="Hxm-yc-SjB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vwg-I6-1cD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OJK-5t-Tcc" kind="relationship" relationship="rootViewController" id="LxI-2F-q8D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bsm-fb-dmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="268"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="FDb-gC-txd"/>
-        <segue reference="qai-nH-eKO"/>
+        <segue reference="zll-96-eTy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
