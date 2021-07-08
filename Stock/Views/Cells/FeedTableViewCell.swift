@@ -28,16 +28,24 @@ class FeedTableViewCell: UITableViewCell {
     
     return label
   }()
+  private let totalStockLabel: UILabel = {
+    
+    let label = UILabel()
+    label.textColor = .white
+    label.font = .systemFont(ofSize: 20, weight: .bold)
+    
+    return label
+  }()
   
   
   
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    contentView.backgroundColor = .orange
+    contentView.backgroundColor = .blue
     contentView.addSubview(nameLabel)
     contentView.addSubview(priceLabel)
-    
+    contentView.addSubview(totalStockLabel)
     
   }
   
@@ -45,17 +53,19 @@ class FeedTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configure(nameText: String, priceText: String) {
+  public func configure(nameText: String, priceText: String, totalStockText: String) {
     nameLabel.text = nameText
-    priceLabel.text = "\(Double(priceText) ?? 0) ₺"
+    priceLabel.text = "Satış Fiyatı: \(Double(priceText) ?? 0) ₺"
+    totalStockLabel.text = "Stok: \(totalStockText)"
     
-    
+  
     
   }
   
   override func prepareForReuse() {
     nameLabel.text = nil
     priceLabel.text = nil
+    totalStockLabel.text = nil
     
     
   }
@@ -65,14 +75,21 @@ class FeedTableViewCell: UITableViewCell {
     
     
     nameLabel.frame = CGRect(
-      x:20,
+      x:10,
+      y: 0,
+      width: contentView.frame.size.width/2-20,
+      height: contentView.frame.size.height)
+    
+    priceLabel.frame = CGRect(
+      x: contentView.frame.size.width/2-20,
       y: 0,
       width: contentView.frame.size.width-40,
       height: contentView.frame.size.height/2-5)
-    priceLabel.frame = CGRect(
-      x: 20,
-      y: nameLabel.bottom + 5,
-      width: contentView.frame.size.width-40,
+    
+    totalStockLabel.frame = CGRect(
+      x: contentView.frame.size.width/2-20,
+      y: contentView.frame.size.height/2-5,
+      width: contentView.frame.size.width/2-20,
       height: contentView.frame.size.height/2-5)
     
     

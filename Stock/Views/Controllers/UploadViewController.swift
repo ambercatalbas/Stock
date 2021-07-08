@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class UploadViewController: UIViewController {
   
@@ -186,7 +187,7 @@ class UploadViewController: UIViewController {
                          for: .touchUpInside)
    
     createDatePicker()
-    get()
+    //get()
     plusFunc()
   }
   func plusFunc() {
@@ -315,6 +316,7 @@ class UploadViewController: UIViewController {
     //Database
     plusFunc()
     
+    
     let firestoreDatabase = Firestore.firestore()
     
     var firestoreReference : DocumentReference? = nil
@@ -328,6 +330,7 @@ class UploadViewController: UIViewController {
       "totalStock": self.totalStockText.text] as [String: Any]
     
     FirebaseService().didTapSave(filePath: "Product", productModel: productModel)
+    
     
     
     

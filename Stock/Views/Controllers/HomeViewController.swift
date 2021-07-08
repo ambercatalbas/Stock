@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
@@ -22,6 +23,8 @@ class HomeViewController: UIViewController {
   private var products = [Product]()
   
   var productIDArray = [String]()
+  
+  var colorArray = [UIColor]()
   
   var selectedproductName = ""
   var selectedpurchaseNumber = ""
@@ -46,25 +49,36 @@ class HomeViewController: UIViewController {
       tableView.dataSource = self
       view.addSubview(tableView)
       getData()
+  
      
     }
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     tableView.frame = view.bounds
     
+    navigationItem.title = "Ürün Listesi"
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ürün Ekle", style: .done, target: self, action: #selector(addTapped))
   }
-
+ 
+  @objc func addTapped() {
+    performSegue(withIdentifier: "toUploadVC", sender: nil)
+  }
   func getData () {
-    let docRef = Firestore.firestore().collection("Product").order(by: "date").addSnapshotListener { [self] (snapshot, error) in
+    
+    let docRef = Firestore.firestore().collection("Product").order(by: "productName").addSnapshotListener { [self] (snapshot, error) in
       if error != nil {
         print("error")
       } else {
         if snapshot != nil {
+          
+          self.products.removeAll(keepingCapacity: false)
+          self.productIDArray.removeAll(keepingCapacity: false)
+          
           for product in snapshot!.documents {
             let documentID = product.documentID
             self.productIDArray.append(documentID)
             
-            print(documentID)
+           
             
             let product = Product(
               productName: product.get("productName") as! String,
@@ -75,14 +89,15 @@ class HomeViewController: UIViewController {
               date: product.get("date") as! String,
               totalStock: product.get("totalStock") as! String)
             self.products.append(product)
-            print(products)
+         
+          
             self.productsListViewModel = ProductsListViewModel(productList: products)
-//
-//            let productsListViewModell = self.productsListViewModel.productAtIndex(index)
-            
-            
+     
           }
-          self.tableView.reloadData()
+          if products.count > 0 {
+            self.tableView.reloadData()
+          }
+          
         }
       }
     }
@@ -99,8 +114,8 @@ class HomeViewController: UIViewController {
           return UITableViewCell()
     
       }
-    cell.configure(nameText: products[indexPath.row].productName, priceText: products[indexPath.row].initialStockQuantity )
-    
+    cell.configure(nameText: products[indexPath.row].productName , priceText: products[indexPath.row].salePrice, totalStockText: products[indexPath.row].totalStock )
+ 
     
       return cell
   }
