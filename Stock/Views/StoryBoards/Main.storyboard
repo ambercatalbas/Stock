@@ -112,10 +112,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="exm-bL-zFm"/>
+                    <connections>
+                        <segue destination="I7i-6d-tAK" kind="show" identifier="toAddProductVC" id="8PX-hd-7ML"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvG-d3-Sqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="525" y="1070"/>
+        </scene>
+        <!--Add Product View Controller-->
+        <scene sceneID="ycS-Wy-Kn6">
+            <objects>
+                <viewController storyboardIdentifier="AddProductViewController" id="I7i-6d-tAK" customClass="AddProductViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6b-xV-Qoh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LqT-Um-uf6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Nk-FB-dUJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7H-L0-3Uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="546" y="1802"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qry-sR-atg">

@@ -13,10 +13,15 @@ struct Sales {
 }
 
 struct Sale {
+  let invoiceDescription: String
   let customerName: String
-  let collectionStatus: String
+  let collectionStatus: Bool
+  let invoiceDate: String
   let expiryDate: String
-  let products: String
+  let products: [SaleProduct]
+  let totalPrice: Double
+}
+struct SaleProduct {
   let productName: String
   let quantity: Int
   let salePrice: Double
