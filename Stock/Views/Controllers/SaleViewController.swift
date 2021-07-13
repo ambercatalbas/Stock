@@ -198,11 +198,19 @@ class SaleViewController: UIViewController {
     return button
   } ()
   
+  var pickerView = UIPickerView()
   
+  
+  
+  var cities = ["a", "b", "c"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+      pickerView.delegate = self
+      pickerView.dataSource = self
+      
  addSubviews()
 
       addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
@@ -225,6 +233,9 @@ class SaleViewController: UIViewController {
     view.addSubview(quantityText)
     view.addSubview(salePriceText)
     view.addSubview(addButton)
+    
+    
+    customerNameText.inputView = pickerView
     
   }
   override func viewDidLayoutSubviews() {
@@ -283,4 +294,24 @@ class SaleViewController: UIViewController {
     
   }
 
+}
+
+extension SaleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return cities.count
+  }
+  
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return cities[row]
+  }
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    //TODO
+    
+    customerNameText.text = cities[row]
+    customerNameText.resignFirstResponder()
+    
+  }
 }
