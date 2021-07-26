@@ -15,6 +15,13 @@ class LogInViewController: UIViewController {
     struct Constants {
         static let cornerRadius: CGFloat = 8.0
     }
+  private let headerView: UIView = {
+          let header = UIView()
+          header.clipsToBounds = true
+        let backgroudImageView = UIImageView(image: UIImage(named: "Logo"))
+          header.addSubview(backgroudImageView)
+          return header
+      } ()
     
     private let emailText: UITextField = {
         
@@ -75,14 +82,6 @@ class LogInViewController: UIViewController {
         return button
     } ()
     
-    private let headerView: UIView = {
-        let header = UIView()
-        header.clipsToBounds = true
-      let backgroudImageView = UIImageView(image: UIImage(named: "Mobiroller"))
-        header.addSubview(backgroudImageView)
-        return header
-    } ()
-    
     private let termsButton: UIButton = {
         let button = UIButton()
         button.setTitle("Terms of Service", for: .normal)
@@ -129,16 +128,17 @@ class LogInViewController: UIViewController {
         
         
         //assign frames
-        
+      
+    
         headerView.frame = CGRect(
             x: 0,
-            y: 0,
+          y: view.safeAreaInsets.bottom,
             width: view.width,
             height: view.height/3)
         
         emailText.frame = CGRect(
             x: 25,
-            y: headerView.bottom + 40,
+            y: headerView.bottom + 10,
             width: view.width - 50,
             height: 52.0)
         
@@ -226,7 +226,7 @@ class LogInViewController: UIViewController {
         }
     }
     @objc private func didTapTermsButton() {
-        guard let url = URL(string: "https://www.mobiroller.com/tr/kullanim-kosullari/") else {
+        guard let url = URL(string: "https://catalbas-yemcilik-besicilik.business.site/") else {
             return
         }
         let vc = SFSafariViewController(url: url)
@@ -234,7 +234,7 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func didTapPrivacyButton() {
-        guard let url = URL(string: "https://www.mobiroller.com/tr/guvenlik-bildirimi/") else {
+        guard let url = URL(string: "https://catalbas-yemcilik-besicilik.business.site/") else {
             return
         }
         let vc = SFSafariViewController(url: url)
