@@ -1,6 +1,6 @@
 //
 //  Extensions.swift
-//  TriviaTek
+//  Stock
 //
 //  Created by Amber ÇATALBAŞ on 1.07.2021.
 //

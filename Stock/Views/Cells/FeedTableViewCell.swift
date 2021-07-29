@@ -1,6 +1,6 @@
 //
 //  FeedTableViewCell.swift
-//  Mobiroller
+//  Stock
 //
 //  Created by Amber ÇATALBAŞ on 29.05.2021.
 //

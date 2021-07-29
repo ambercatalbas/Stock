@@ -2,13 +2,13 @@
 //  SaleViewController.swift
 //  Stock
 //
-//  Created by Yasemin YEL on 8.07.2021.
+//  Created by Amber ÇATALBAŞ on 8.07.2021.
 //
 
 import UIKit
 
 class SaleViewController: UIViewController {
-
+  
   struct Constants {
     static let cornerRadius: CGFloat = 8.0
   }
@@ -204,23 +204,23 @@ class SaleViewController: UIViewController {
   
   var cities = ["a", "b", "c"]
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      
-      pickerView.delegate = self
-      pickerView.dataSource = self
-      
- addSubviews()
-
-      addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-      
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    pickerView.delegate = self
+    pickerView.dataSource = self
+    
+    addSubviews()
+    
+    addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+    
+  }
   @objc func addButtonTapped() {
     performSegue(withIdentifier: "toAddProductVC", sender: self)
     
   }
-    
+  
   private func addSubviews() {
     view.addSubview(invoiceDescriptionText)
     view.addSubview(customerNameText)
@@ -288,12 +288,8 @@ class SaleViewController: UIViewController {
       y: totalPriceText.bottom + 5,
       width: view.width/2-25,
       height: 40)
-    
-    
-    
-    
   }
-
+  
 }
 
 extension SaleViewController: UIPickerViewDelegate, UIPickerViewDataSource {

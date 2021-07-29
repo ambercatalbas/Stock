@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Stock
 //
-//  Created by Yasemin YEL on 6.07.2021.
+//  Created by Amber ÇATALBAŞ on 6.07.2021.
 //
 
 import UIKit

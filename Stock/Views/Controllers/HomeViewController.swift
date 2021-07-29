@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  StockTarcking
+//  Stock
 //
 //  Created by Yasemin YEL on 6.07.2021.
 //

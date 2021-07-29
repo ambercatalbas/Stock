@@ -2,7 +2,7 @@
 //  AddProductViewController.swift
 //  Stock
 //
-//  Created by Yasemin YEL on 12.07.2021.
+//  Created by Amber ÇATALBAŞ on 12.07.2021.
 //
 
 import UIKit

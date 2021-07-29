@@ -1,6 +1,6 @@
 //
 //  LogInViewController.swift
-//  Mobiroller
+//  Stock
 //
 //  Created by Amber ÇATALBAŞ on 26.05.2021.
 //

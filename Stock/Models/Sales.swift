@@ -2,7 +2,7 @@
 //  Sales.swift
 //  Stock
 //
-//  Created by Yasemin YEL on 8.07.2021.
+//  Created by Amber ÇATALBAŞ on 8.07.2021.
 //
 
 import Foundation

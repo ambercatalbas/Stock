@@ -1,6 +1,6 @@
 //
 //  Models.swift
-//  Instagram
+//  Stock
 //
 //  Created by Amber ÇATALBAŞ on 29.04.2021.
 //
